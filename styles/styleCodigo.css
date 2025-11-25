@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(0, 219, 222, 0.6);
+}
+
+/* Contenedor del QR con efecto glassmorphism */
+img {
+    width: 280px;
+    height: 280px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(0, 219, 222, 0.4);
+    border-radius: 24px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(252, 0, 255, 0.4);
+    transition: all 0.4s ease;
+    margin-bottom: 50px;
+}
+
+img:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7),
+                0 0 60px rgba(252, 0, 255, 0.7);
+}
+
+/* Botones / enlaces grandes y chulos */
+p {
+    margin: 25px 0;
+}
+
+p a {
+    display: inline-block;
+    padding: 18px 40px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(252, 0, 255, 0.4);
+    transition: all 0.4s ease;
+    min-width: 300px;
+}
+
+p a:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(252, 0, 255, 0.6);
+}
+
+p a:active {
+    transform: translateY(-2px);
+}
+
+/* Efecto extra: brillo sutil en los enlaces */
+p a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3));
+    transform: skewX(-25deg);
+    transition: 0.6s;
+    pointer-events: none;
+}
+
+p a:hover::before {
+    left: 100%;
+}

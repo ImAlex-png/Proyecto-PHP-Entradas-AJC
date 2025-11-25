@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 219, 222, 0.5);
+}
+
+form {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 45px 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 420px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #00dbde;
+    text-shadow: 0 0 8px rgba(0, 219, 222, 0.3);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 219, 222, 0.4);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* ==== SELECT 100% FUNCIONAL EN TODOS LOS NAVEGADORES ==== */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 12 8'%3E%3Cpath fill='%23fc00ff' d='M1 0l5 6 5-6z'/%3E%3C/svg%3E") no-repeat right 16px center / 16px;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #fc00ff;
+    box-shadow: 0 0 15px rgba(252, 0, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ¡¡TRUCO QUE FUNCIONA EN TODOS LOS NAVEGADORES!! */
+select,
+select option {
+    color: white !important;
+    background: #16213e !important; /* Fondo oscuro */
+}
+
+select option:hover,
+select option:focus,
+select option:checked,
+select option:active {
+    background: linear-gradient(90deg, #00dbde, #fc00ff) !important;
+    color: white !important;
+}
+
+/* En algunos navegadores (especialmente Firefox) hay que forzar aún más */
+select::-ms-expand { display: none; } /* IE/Edge */
+select:-moz-focusring { color: transparent; text-shadow: 0 0 0 white; }
+
+/* Fin del fix del select */
+
+input[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #00dbde, #fc00ff);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(252, 0, 255, 0.3);
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(252, 0, 255, 0.5);
+}
