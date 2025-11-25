@@ -1,4 +1,4 @@
-# Sistema de Gestión de Entradas
+# Sistema de Gestión de Entradas 🎟️
 
 Este proyecto permite gestionar la compra de entradas de cine mediante selección de asientos, generación de códigos QR, descarga en PDF y envío por correo electrónico.
 
